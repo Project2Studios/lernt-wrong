@@ -9,6 +9,8 @@ export interface OutdatedFact {
   debunkedYear?: number;
   taughtUntilYear?: number;
   stillTaught?: boolean;
+  source?: string;
+  sourceUrl?: string;
   // Voting properties
   upvotes?: number;
   downvotes?: number;

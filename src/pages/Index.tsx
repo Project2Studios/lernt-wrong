@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, BookOpen, Calendar, ArrowRight } from "lucide-react";
-import { fetchFactsWithFallback, getFactsForGraduationYear, type EnhancedFact } from "@/lib/api";
+import { fetchFactsWithFallback, getFactsForGraduationYear, applyFilters, type EnhancedFact, type FilterOptions } from "@/lib/api";
 import FactCard from "@/components/FactCard";
+import FilterBar, { type FilterState } from "@/components/FilterBar";
 import Footer from "@/components/Footer";
 import { toast } from "@/hooks/use-toast";
 
@@ -16,7 +17,23 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingFacts, setIsLoadingFacts] = useState(true);
   const [usingFallback, setUsingFallback] = useState(false);
-  const [localVotes, setLocalVotes] = useState<Record<string, { type: 'up' | 'down'; upvotes: number; downvotes: number }>>({})
+  const [localVotes, setLocalVotes] = useState<Record<string, { type: 'up' | 'down'; upvotes: number; downvotes: number }>>({});
+
+  // Filter state
+  const [activeFilters, setActiveFilters] = useState<FilterState>({
+    category: null,
+    stillTaught: null,
+    debunkedDecade: null,
+    recentlyDebunked: null,
+    persistent: null,
+    topVoted: null,
+    sortBy: "chronological",
+  });
+
+  // Apply filters to graduation-filtered facts
+  const finalFilteredFacts = useMemo(() => {
+    return applyFilters(filteredFacts, activeFilters);
+  }, [filteredFacts, activeFilters]);
 
   // Load facts from API on component mount
   useEffect(() => {
@@ -80,6 +97,20 @@ const Index = () => {
     setShowResults(false);
     setFilteredFacts([]);
     setGraduationYear("");
+    // Reset filters when going back to start
+    setActiveFilters({
+      category: null,
+      stillTaught: null,
+      debunkedDecade: null,
+      recentlyDebunked: null,
+      persistent: null,
+      topVoted: null,
+      sortBy: "chronological",
+    });
+  };
+
+  const handleFilterChange = (newFilters: FilterState) => {
+    setActiveFilters(newFilters);
   };
 
   const handleVoteUpdate = (factId: string, newCounts: { upvotes: number; downvotes: number; totalVotes: number }) => {
@@ -139,12 +170,21 @@ const Index = () => {
               )}
 
               <p className="text-lg text-muted-foreground mb-6">
-                Here are {filteredFacts.length} "facts" you learned that science has since updated
+                Discovered {filteredFacts.length} "facts" from your school days
               </p>
             </div>
 
-            <div className="grid gap-6 md:gap-8">
-              {filteredFacts.map((fact, index) => (
+            {/* Filter Bar */}
+            <FilterBar
+              facts={filteredFacts}
+              filteredCount={finalFilteredFacts.length}
+              totalCount={filteredFacts.length}
+              onFilterChange={handleFilterChange}
+              activeFilters={activeFilters}
+            />
+
+            <div className="grid gap-6 md:gap-8 mt-8">
+              {finalFilteredFacts.map((fact, index) => (
                 <FactCard
                   key={fact.id}
                   fact={fact}
@@ -155,13 +195,26 @@ const Index = () => {
               ))}
             </div>
 
+            {/* Empty states */}
             {filteredFacts.length === 0 && (
-              <Card className="text-center py-12">
+              <Card className="text-center py-12 mt-8">
                 <CardContent>
                   <GraduationCap className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
                   <CardTitle className="text-xl mb-2">No outdated facts found</CardTitle>
                   <CardDescription>
                     Either you graduated too recently, or we haven't catalogued facts from your era yet!
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            )}
+
+            {filteredFacts.length > 0 && finalFilteredFacts.length === 0 && (
+              <Card className="text-center py-12 mt-8">
+                <CardContent>
+                  <GraduationCap className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+                  <CardTitle className="text-xl mb-2">No facts match your filters</CardTitle>
+                  <CardDescription>
+                    Try adjusting your filters or clearing them to see more results.
                   </CardDescription>
                 </CardContent>
               </Card>

@@ -7,6 +7,8 @@ export interface OutdatedFact {
   debunkedYear?: number;
   taughtUntilYear?: number;
   stillTaught?: boolean; // Still being taught despite being debunked
+  source?: string;
+  sourceUrl?: string;
 }
 
 export const outdatedFacts: Record<string, OutdatedFact[]> = {
@@ -18,7 +20,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Pluto was discovered in 1930 and taught as the 9th planet for 76 years. The International Astronomical Union reclassified it in 2006 when they refined the definition of 'planet' to require clearing its orbital neighborhood. Pluto shares its orbit with many Kuiper Belt objects. Despite the scientific reclassification, many still emotionally refer to it as a planet.",
       category: "Astronomy",
       debunkedYear: 2006,
-      taughtUntilYear: 2006
+      taughtUntilYear: 2006,
+      source: "International Astronomical Union Resolution B5",
+      sourceUrl: "https://www.iau.org/news/pressreleases/detail/iau0603/"
     },
     {
       id: "dinosaur_extinction",
@@ -27,7 +31,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Before 1980, paleontologists believed dinosaurs died out slowly due to climate change or competition. Luis Alvarez's team discovered the iridium layer in rock formations, proving a massive asteroid impact 66 million years ago caused rapid extinction. This revolutionary discovery shifted from gradualism to catastrophism in paleontology.",
       category: "Paleontology",
       debunkedYear: 1980,
-      taughtUntilYear: 1985
+      taughtUntilYear: 1985,
+      source: "Alvarez et al. Science (1980)",
+      sourceUrl: "https://science.sciencemag.org/content/208/4448/1095"
     },
     {
       id: "tongue_taste_map",
@@ -36,7 +42,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This 'tongue map' was based on a mistranslation of German research from 1901. While different areas may have slightly different sensitivities, all taste buds can detect sweet, sour, salty, bitter, and umami tastes. Despite being debunked 50 years ago, this myth still appears in many current textbooks.",
       category: "Biology",
       debunkedYear: 1974,
-      stillTaught: true
+      stillTaught: true,
+      source: "Collings (1974) Perception & Psychophysics",
+      sourceUrl: "https://link.springer.com/article/10.3758/BF03206543"
     },
     {
       id: "atoms_indivisible",
@@ -46,7 +54,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Physics",
       debunkedYear: 1897,
       taughtUntilYear: 1950,
-      stillTaught: true
+      stillTaught: true,
+      source: "Thomson J.J. (1897) Cathode Rays. Philosophical Magazine 44:293-316",
+      sourceUrl: "https://doi.org/10.1080/14786449708621070"
     },
     {
       id: "ice_age_cooling",
@@ -55,7 +65,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "In the 1970s, some scientists speculated about global cooling based on aerosol pollution and natural cycles. However, even then, more papers predicted warming than cooling. By 1979, the National Academy of Sciences concluded human CO2 emissions would cause significant warming. The 'ice age' myth was amplified by sensationalist media coverage.",
       category: "Climate Science",
       debunkedYear: 1979,
-      taughtUntilYear: 1985
+      taughtUntilYear: 1985,
+      source: "Charney et al. (1979) Carbon Dioxide and Climate: A Scientific Assessment. National Academy Press",
+      sourceUrl: "https://doi.org/10.17226/12181"
     },
     {
       id: "left_right_brain",
@@ -64,7 +76,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "University of Utah neuroscientists in 2013 studied 1,011 people aged 7-29 using brain imaging and found no evidence of hemispheric dominance. Despite this, 90%+ of teacher training programs still include this myth.",
       category: "Psychology",
       debunkedYear: 2013,
-      stillTaught: true
+      stillTaught: true,
+      source: "Nielsen et al. (2013) PLoS ONE 8(8):e71275",
+      sourceUrl: "https://doi.org/10.1371/journal.pone.0071275"
     },
     {
       id: "cholesterol_deadly",
@@ -73,7 +87,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The 2015 US Dietary Guidelines removed cholesterol limits after research showed dietary cholesterol has minimal impact on blood cholesterol for most people. The body produces cholesterol for essential functions like hormone production.",
       category: "Medicine",
       debunkedYear: 2015,
-      taughtUntilYear: 2015
+      taughtUntilYear: 2015,
+      source: "Dietary Guidelines Advisory Committee (2015) Scientific Report of the 2015 DGAC",
+      sourceUrl: "https://health.gov/dietaryguidelines/2015-scientific-report/"
     },
     {
       id: "spinach_iron_myth",
@@ -82,7 +98,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "German chemist Gustav von Bunge incorrectly recorded spinach's iron content as 35mg/100g instead of 3.5mg in 1870. This error wasn't caught for decades and inspired Popeye's spinach obsession (1929). The error was corrected in the 1930s, but the myth persisted. Spinach actually contains 2.7mg/100g - less than many beans, lentils, and even some leafy greens.",
       category: "Nutrition",
       debunkedYear: 1937,
-      stillTaught: true
+      stillTaught: true,
+      source: "Carpenter & Sutherland (1995) British Journal of Nutrition 73:787-803",
+      sourceUrl: "https://doi.org/10.1079/BJN19950084"
     },
     {
       id: "hair_grows_after_death",
@@ -109,7 +127,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Studies have shown goldfish can be trained to navigate mazes, recognize human faces, and even play soccer. They can remember feeding schedules and respond to different colored lights. Their memory spans can last at least 3 months, possibly longer. This myth has been debunked for 60+ years but persists in educational settings.",
       category: "Biology",
       debunkedYear: 1965,
-      stillTaught: true
+      stillTaught: true,
+      source: "Agranoff & Klinger (1964) Science 146:952-953",
+      sourceUrl: "https://doi.org/10.1126/science.146.3646.952"
     },
     {
       id: "lightning_never_strikes_twice",
@@ -155,7 +175,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "A 1995 JAMA meta-analysis of 23 experiments found no effect of sugar on behavior. The NIH announced no link as early as 1982. This myth persists despite overwhelming scientific evidence.",
       category: "Nutrition",
       debunkedYear: 1995,
-      taughtUntilYear: 2000
+      taughtUntilYear: 2000,
+      source: "Wolraich et al. (1995) JAMA 274:1617-1621",
+      sourceUrl: "https://doi.org/10.1001/jama.1995.03530200053037"
     },
     {
       id: "waiting_after_eating_swim",
@@ -173,7 +195,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Barry Marshall and Robin Warren's research (1982-1985) proved H. pylori bacteria causes 90%+ of ulcers. Marshall even infected himself to prove the point. They won the 2005 Nobel Prize for this discovery.",
       category: "Medicine",
       debunkedYear: 1982,
-      taughtUntilYear: 1990
+      taughtUntilYear: 1990,
+      source: "Marshall & Warren (1984) Lancet 323:1311-1315",
+      sourceUrl: "https://doi.org/10.1016/S0140-6736(84)91816-6"
     },
     {
       id: "alpha_wolves_pack_leader",

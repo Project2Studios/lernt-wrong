@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, ThumbsUp, ThumbsDown } from "lucide-react";
+import { ChevronDown, ChevronUp, ThumbsUp, ThumbsDown, ExternalLink } from "lucide-react";
 import { OutdatedFact } from "@/types/fact";
 import { submitVote } from "@/lib/api";
 import { toast } from "@/hooks/use-toast";
@@ -264,6 +264,27 @@ const FactCard = ({ fact, index, onVoteUpdate, fallbackMode = false }: FactCardP
                     {fact.explanation}
                   </div>
                 )}
+              </div>
+            )}
+
+            {/* Source information */}
+            {(fact.source || fact.sourceUrl) && (
+              <div className="pt-2 border-t border-border/30">
+                <div className="text-xs text-muted-foreground">
+                  {fact.sourceUrl ? (
+                    <a
+                      href={fact.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                    >
+                      Source: {fact.source || "Research Study"}
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  ) : (
+                    <span>Source: {fact.source}</span>
+                  )}
+                </div>
               </div>
             )}
           </div>

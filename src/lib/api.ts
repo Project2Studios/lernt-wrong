@@ -269,3 +269,116 @@ export function getFactsForGraduationYear(facts: EnhancedFact[], year: number): 
     return a.id.localeCompare(b.id);
   });
 }
+
+// Filter utilities
+export interface FilterOptions {
+  category?: string | null;
+  stillTaught?: boolean | null;
+  debunkedDecade?: string | null;
+  recentlyDebunked?: string | null;
+  persistent?: string | null;
+  topVoted?: string | null;
+  sortBy?: string;
+}
+
+// Apply filters to facts array
+export function applyFilters(facts: EnhancedFact[], filters: FilterOptions): EnhancedFact[] {
+  let filtered = facts;
+
+  // Category filter
+  if (filters.category) {
+    filtered = filtered.filter(fact => fact.category === filters.category);
+  }
+
+  // Still taught today filter
+  if (filters.stillTaught === true) {
+    filtered = filtered.filter(fact => fact.stillTaught === true);
+  }
+
+  // Debunked decade filter
+  if (filters.debunkedDecade) {
+    const decade = parseInt(filters.debunkedDecade);
+    filtered = filtered.filter(fact => {
+      if (!fact.debunkedYear) return false;
+      const factDecade = Math.floor(fact.debunkedYear / 10) * 10;
+      return factDecade === decade;
+    });
+  }
+
+  // Recently debunked filter (last 10 years)
+  if (filters.recentlyDebunked === 'recent') {
+    const currentYear = new Date().getFullYear();
+    const tenYearsAgo = currentYear - 10;
+    filtered = filtered.filter(fact =>
+      fact.debunkedYear && fact.debunkedYear >= tenYearsAgo
+    );
+  }
+
+  // Persistent myths filter (taught for 20+ years after debunking)
+  if (filters.persistent === 'persistent') {
+    filtered = filtered.filter(fact => {
+      if (!fact.debunkedYear || !fact.taughtUntilYear) return false;
+      return (fact.taughtUntilYear - fact.debunkedYear) >= 20;
+    });
+  }
+
+  // Top voted filter (above average votes)
+  if (filters.topVoted === 'topVoted') {
+    const avgVotes = facts.reduce((sum, fact) => sum + fact.totalVotes, 0) / facts.length;
+    filtered = filtered.filter(fact => fact.totalVotes >= avgVotes);
+  }
+
+  // Apply sorting
+  return sortFacts(filtered, filters.sortBy || 'chronological');
+}
+
+// Sort facts based on criteria
+export function sortFacts(facts: EnhancedFact[], sortBy: string): EnhancedFact[] {
+  const sorted = [...facts];
+
+  switch (sortBy) {
+    case 'recent':
+      return sorted.sort((a, b) => {
+        const aYear = a.debunkedYear || 0;
+        const bYear = b.debunkedYear || 0;
+        return bYear - aYear; // Most recent first
+      });
+
+    case 'category':
+      return sorted.sort((a, b) => {
+        const categoryCompare = a.category.localeCompare(b.category);
+        if (categoryCompare !== 0) return categoryCompare;
+        // Secondary sort by debunked year within category
+        const aYear = a.debunkedYear || a.taughtUntilYear || 9999;
+        const bYear = b.debunkedYear || b.taughtUntilYear || 9999;
+        return aYear - bYear;
+      });
+
+    case 'votes':
+      return sorted.sort((a, b) => {
+        // Primary: total votes (descending)
+        if (a.totalVotes !== b.totalVotes) {
+          return b.totalVotes - a.totalVotes;
+        }
+        // Secondary: upvote ratio (descending)
+        const aRatio = a.totalVotes > 0 ? a.upvotes / a.totalVotes : 0;
+        const bRatio = b.totalVotes > 0 ? b.upvotes / b.totalVotes : 0;
+        return bRatio - aRatio;
+      });
+
+    case 'chronological':
+    default:
+      return sorted.sort((a, b) => {
+        // Primary sort: use debunkedYear or taughtUntilYear (whichever is available)
+        const aYear = a.debunkedYear || a.taughtUntilYear || 9999;
+        const bYear = b.debunkedYear || b.taughtUntilYear || 9999;
+
+        if (aYear !== bYear) {
+          return aYear - bYear; // Earlier years first
+        }
+
+        // Secondary sort: by fact ID for consistent ordering
+        return a.id.localeCompare(b.id);
+      });
+  }
+}

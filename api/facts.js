@@ -11,6 +11,8 @@ function transformFact(dbFact, voteCounts) {
     debunkedYear: dbFact.debunked_year || undefined,
     taughtUntilYear: dbFact.taught_until_year || undefined,
     stillTaught: dbFact.still_taught || false,
+    source: dbFact.source || undefined,
+    sourceUrl: dbFact.source_url || undefined,
     upvotes: voteCounts?.upvotes || 0,
     downvotes: voteCounts?.downvotes || 0,
     totalVotes: voteCounts?.total_votes || 0,

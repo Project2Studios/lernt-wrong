@@ -14,6 +14,8 @@ CREATE TABLE facts (
   debunked_year INTEGER,
   taught_until_year INTEGER,
   still_taught BOOLEAN DEFAULT FALSE,
+  source TEXT,
+  source_url TEXT,
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW()
 );
