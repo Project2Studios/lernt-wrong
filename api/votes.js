@@ -73,12 +73,24 @@ export default async function handler(req, res) {
       return res.status(400).json({
         success: false,
         error: 'You have already voted on this fact',
+        alreadyVoted: true,
       });
     }
 
+    // Check for database constraint errors
+    if (error.code === '23503') { // Foreign key violation
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid fact ID or session',
+      });
+    }
+
+    // Return more detailed error for debugging
     res.status(500).json({
       success: false,
       error: 'Failed to record vote',
+      details: error.message,
+      errorCode: error.code,
     });
   }
 };

@@ -60,11 +60,16 @@ export async function getSessionToken(): Promise<string> {
 
   // Create new session
   try {
+    const browserFingerprint = getBrowserFingerprint();
+
     const response = await fetch(`${API_BASE_URL}/session`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        browserFingerprint,
+      }),
     });
 
     if (!response.ok) {
@@ -113,6 +118,23 @@ export async function fetchFacts(): Promise<EnhancedFact[]> {
   }
 }
 
+// Generate a simple browser fingerprint
+function getBrowserFingerprint(): string {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx?.fillText('fingerprint', 10, 10);
+
+  const fingerprint = [
+    navigator.userAgent,
+    navigator.language,
+    screen.width + 'x' + screen.height,
+    new Date().getTimezoneOffset(),
+    canvas.toDataURL()
+  ].join('|');
+
+  return btoa(fingerprint).substring(0, 32);
+}
+
 // Submit a vote
 export async function submitVote(
   factId: string,
@@ -120,6 +142,7 @@ export async function submitVote(
 ): Promise<VoteResponse> {
   try {
     const sessionToken = await getSessionToken();
+    const browserFingerprint = getBrowserFingerprint();
 
     const response = await fetch(`${API_BASE_URL}/votes`, {
       method: 'POST',
@@ -130,6 +153,7 @@ export async function submitVote(
         factId,
         voteType,
         sessionToken,
+        browserFingerprint,
       }),
     });
 
