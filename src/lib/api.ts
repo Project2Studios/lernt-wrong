@@ -40,7 +40,7 @@ export interface VoteResponse {
   message?: string;
   error?: string;
   alreadyVoted?: boolean;
-  newCounts?: {
+  counts?: {
     upvotes: number;
     downvotes: number;
     totalVotes: number;

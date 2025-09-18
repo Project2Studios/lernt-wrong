@@ -115,13 +115,13 @@ const FactCard = ({ fact, index, onVoteUpdate, fallbackMode = false }: FactCardP
       // Real voting for database mode
       const result = await submitVote(fact.id, voteType);
 
-      if (result.success && result.newCounts) {
+      if (result.success && result.counts) {
         // Update local state
         setUserVote(voteType);
-        setVoteCounts(result.newCounts);
+        setVoteCounts(result.counts);
 
         // Notify parent component
-        onVoteUpdate?.(fact.id, result.newCounts);
+        onVoteUpdate?.(fact.id, result.counts);
 
         toast({
           title: "Vote recorded!",
