@@ -160,7 +160,7 @@ function transformStaticFact(fact: OutdatedFact): EnhancedFact {
 }
 
 // Enhanced fetchFacts with fallback to TypeScript data
-export async function fetchFactsWithFallback(): Promise<EnhancedFact[]> {
+export async function fetchFactsWithFallback(): Promise<{ facts: EnhancedFact[]; usingFallback: boolean }> {
   try {
     // Try to fetch from database first
     const dbFacts = await fetchFacts();
@@ -168,16 +168,16 @@ export async function fetchFactsWithFallback(): Promise<EnhancedFact[]> {
     // If we have database facts, use them
     if (dbFacts && dbFacts.length > 0) {
       console.log('✅ Using database facts:', dbFacts.length);
-      return dbFacts;
+      return { facts: dbFacts, usingFallback: false };
     }
 
     // Fallback to TypeScript facts
     console.log('📁 Falling back to TypeScript facts');
-    return getFallbackFacts();
+    return { facts: getFallbackFacts(), usingFallback: true };
 
   } catch (error) {
     console.log('⚠️ Database unavailable, using TypeScript facts');
-    return getFallbackFacts();
+    return { facts: getFallbackFacts(), usingFallback: true };
   }
 }
 

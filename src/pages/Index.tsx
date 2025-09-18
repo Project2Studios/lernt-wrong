@@ -21,14 +21,11 @@ const Index = () => {
   useEffect(() => {
     const loadFacts = async () => {
       try {
-        const facts = await fetchFactsWithFallback();
+        const { facts, usingFallback } = await fetchFactsWithFallback();
         setAllFacts(facts);
+        setUsingFallback(usingFallback);
 
-        // Check if we're using fallback (TypeScript) data
-        const isUsingFallback = facts.length > 10; // Assume fallback if many facts
-        setUsingFallback(isUsingFallback);
-
-        if (isUsingFallback) {
+        if (usingFallback) {
           toast({
             title: "Using Local Facts",
             description: "Database unavailable - showing facts from TypeScript files with mock voting.",
