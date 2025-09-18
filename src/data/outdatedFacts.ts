@@ -1659,6 +1659,18 @@ export function getFactsForGraduationYear(year: number): OutdatedFact[] {
   const uniqueFacts = relevantFacts.filter((fact, index, self) =>
     index === self.findIndex(f => f.id === fact.id)
   );
-  
-  return uniqueFacts;
+
+  // Sort facts chronologically - oldest first (most nostalgic content at top)
+  return uniqueFacts.sort((a, b) => {
+    // Primary sort: use debunkedYear or taughtUntilYear (whichever is available)
+    const aYear = a.debunkedYear || a.taughtUntilYear || 9999; // Default to far future if no year
+    const bYear = b.debunkedYear || b.taughtUntilYear || 9999;
+
+    if (aYear !== bYear) {
+      return aYear - bYear; // Earlier years first
+    }
+
+    // Secondary sort: by fact ID for consistent ordering when years are equal
+    return a.id.localeCompare(b.id);
+  });
 }

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { GraduationCap, BookOpen, Calendar, ArrowRight } from "lucide-react";
 import { fetchFactsWithFallback, getFactsForGraduationYear, type EnhancedFact } from "@/lib/api";
 import FactCard from "@/components/FactCard";
+import Footer from "@/components/Footer";
 import { toast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -167,13 +168,15 @@ const Index = () => {
             )}
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/30 flex items-center justify-center px-4">
-      <div className="w-full max-w-2xl mx-auto text-center space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/30 flex flex-col">
+      <div className="flex-1 flex items-center justify-center px-4">
+        <div className="w-full max-w-2xl mx-auto text-center space-y-8">
         {/* Header */}
         <div className="space-y-4">
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -242,17 +245,10 @@ const Index = () => {
             </form>
           </CardContent>
         </Card>
-
-        {/* Footer */}
-        <div className="text-sm text-muted-foreground space-y-2">
-          <p>
-            Covering graduation years from 1960 to present • Facts sourced from peer-reviewed research
-          </p>
-          <p className="text-xs opacity-75">
-            Science evolves, and so does our understanding of the world
-          </p>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

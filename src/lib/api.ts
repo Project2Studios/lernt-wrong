@@ -230,7 +230,7 @@ export function getFactsForGraduationYear(facts: EnhancedFact[], year: number): 
   const schoolStartYear = year - 13;
   const schoolEndYear = year;
 
-  return facts.filter(fact => {
+  const relevantFacts = facts.filter(fact => {
     // If the fact has a "taught until" year, it must overlap with school years
     if (fact.taughtUntilYear) {
       // Fact stopped being taught before they started school - exclude it
@@ -253,5 +253,19 @@ export function getFactsForGraduationYear(facts: EnhancedFact[], year: number): 
 
     // Include facts that were likely taught during their school years
     return true;
+  });
+
+  // Sort facts chronologically - oldest first (most nostalgic content at top)
+  return relevantFacts.sort((a, b) => {
+    // Primary sort: use debunkedYear or taughtUntilYear (whichever is available)
+    const aYear = a.debunkedYear || a.taughtUntilYear || 9999; // Default to far future if no year
+    const bYear = b.debunkedYear || b.taughtUntilYear || 9999;
+
+    if (aYear !== bYear) {
+      return aYear - bYear; // Earlier years first
+    }
+
+    // Secondary sort: by fact ID for consistent ordering when years are equal
+    return a.id.localeCompare(b.id);
   });
 }
