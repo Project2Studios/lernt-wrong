@@ -295,7 +295,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Medicine",
       debunkedYear: 1990,
       taughtUntilYear: 2000,
-      stillTaught: true
+      stillTaught: true,
+      source: "Unger D. (2009) Does knuckle cracking lead to arthritis of the fingers? Arthritis & Rheumatism 41:949-950",
+      sourceUrl: "https://doi.org/10.1002/1529-0131(199805)41:5<949::AID-ART36>3.0.CO;2-3"
     },
     {
       id: "humans_swallow_spiders_sleeping",
@@ -304,7 +306,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This myth was deliberately created in 1993 by columnist Lisa Holst to demonstrate how easily false information spreads. Spiders actively avoid the warm, humid, vibrating environment around sleeping humans. Despite being proven false from its creation, this 'fact' is still commonly cited in classrooms and casual conversation.",
       category: "Biology",
       debunkedYear: 1993,
-      stillTaught: true
+      stillTaught: true,
+      source: "Holst L. (1993) Reading is Believing: The Truth About Urban Legends. PC Professional Magazine",
+      sourceUrl: "https://www.snopes.com/fact-check/swallow-spiders/"
     }
   ],
   "1980s": [
@@ -363,7 +367,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Psychology",
       debunkedYear: 1974,
       taughtUntilYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Loftus E.F. (1975) Leading questions and the eyewitness report. Cognitive Psychology 7:560-572",
+      sourceUrl: "https://doi.org/10.1016/0010-0285(75)90023-7"
     },
     {
       id: "acid_rain_permanent",
@@ -560,7 +566,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This persistent myth confuses glass's amorphous structure with being a liquid. Old windows are thicker at the bottom because crown glass manufacturing created uneven sheets, and glaziers typically installed the thicker side down for stability. Modern materials science definitively classifies glass as an amorphous solid. Despite scientific consensus since the 1960s, this myth is still taught in some schools and appears in popular science discussions.",
       category: "Physics",
       debunkedYear: 1960,
-      stillTaught: true
+      stillTaught: true,
+      source: "Zanotto E.D. (1998) Do cathedral glasses flow? American Journal of Physics 66:392-395",
+      sourceUrl: "https://doi.org/10.1119/1.19026"
     },
     {
       id: "pennies_empire_state_deadly",
@@ -569,7 +577,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Physics experiments and calculations show a penny reaches terminal velocity of about 50 mph due to air resistance, insufficient to cause lethal injury. MythBusters tested this extensively in 2003, confirming the penny would sting but not kill. The myth persists because people incorrectly apply free-fall calculations without considering air resistance. Despite physics education and popular TV debunking, this urban legend continues in casual discussions.",
       category: "Physics",
       debunkedYear: 2003,
-      stillTaught: true
+      stillTaught: true,
+      source: "Savage A. & Hyneman J. (2003) MythBusters: Penny Drop Episode. Discovery Channel",
+      sourceUrl: "https://www.discovery.com/shows/mythbusters"
     }
   ],
   "1990s": [
@@ -1206,7 +1216,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Nutrition",
       debunkedYear: 2012,
       taughtUntilYear: 2017,
-      stillTaught: true
+      stillTaught: true,
+      source: "Smith-Spangler C. et al. (2012) Are organic foods safer or healthier than conventional alternatives? Annals of Internal Medicine 157:348-366",
+      sourceUrl: "https://doi.org/10.7326/0003-4819-157-5-201209040-00007"
     },
     {
       id: "brain_games_prevent_dementia",
@@ -1216,7 +1228,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Neuroscience",
       debunkedYear: 2014,
       taughtUntilYear: 2018,
-      stillTaught: true
+      stillTaught: true,
+      source: "Simons D.J. et al. (2016) Do brain-training programs work? Psychological Science in the Public Interest 17:103-186",
+      sourceUrl: "https://doi.org/10.1177/1529100616661983"
     },
     {
       id: "text_messaging_killing_language",
