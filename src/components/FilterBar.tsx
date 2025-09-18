@@ -138,10 +138,10 @@ const FilterBar = ({ facts, filteredCount, totalCount, onFilterChange, activeFil
     <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg shadow-sm">
       <div className="p-4">
         {/* Header with results count and expand toggle */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
             <div className="flex items-center gap-2">
-              <Search className="h-5 w-5 text-muted-foreground" />
+              <Search className="h-5 w-5 text-muted-foreground flex-shrink-0" />
               <span className="text-sm font-medium">
                 Showing {filteredCount} of {totalCount} facts
               </span>
@@ -152,7 +152,7 @@ const FilterBar = ({ facts, filteredCount, totalCount, onFilterChange, activeFil
                 variant="ghost"
                 size="sm"
                 onClick={clearAllFilters}
-                className="text-xs text-muted-foreground hover:text-foreground"
+                className="text-xs text-muted-foreground hover:text-foreground self-start sm:self-auto"
               >
                 <RotateCcw className="h-3 w-3 mr-1" />
                 Clear all
@@ -177,7 +177,7 @@ const FilterBar = ({ facts, filteredCount, totalCount, onFilterChange, activeFil
 
         {/* Active filter chips */}
         {hasActiveFilters && (
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-4 py-2">
             {activeFilterChips.map((chip, index) => (
               <FilterChip
                 key={index}
@@ -199,7 +199,7 @@ const FilterBar = ({ facts, filteredCount, totalCount, onFilterChange, activeFil
             />
 
             <div className="border-t border-border/30 pt-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Category filter */}
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted-foreground">
@@ -272,8 +272,6 @@ const FilterBar = ({ facts, filteredCount, totalCount, onFilterChange, activeFil
                   </Select>
                 </div>
 
-                {/* Empty space for better grid layout */}
-                <div />
               </div>
             </div>
           </CollapsibleContent>

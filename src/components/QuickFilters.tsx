@@ -51,7 +51,7 @@ const QuickFilters = ({ onFilterSelect, activeFilters }: QuickFiltersProps) => {
       <div className="text-sm font-medium text-muted-foreground">
         Quick Filters
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {quickFilterOptions.map((option) => {
           const Icon = option.icon;
           const isActive = activeFilters[option.id] === option.value;
@@ -60,16 +60,16 @@ const QuickFilters = ({ onFilterSelect, activeFilters }: QuickFiltersProps) => {
             <Button
               key={option.id}
               variant="outline"
-              className={`h-auto p-4 flex flex-col items-start gap-2 transition-all ${
+              className={`h-auto min-h-[100px] p-4 flex flex-col items-start justify-start gap-3 transition-all text-left ${
                 isActive ? option.activeColor : option.color
               }`}
               onClick={() => onFilterSelect(option.id, isActive ? null : option.value)}
             >
               <div className="flex items-center gap-2 w-full">
-                <Icon className="h-4 w-4" />
-                <span className="font-medium text-sm">{option.label}</span>
+                <Icon className="h-4 w-4 flex-shrink-0" />
+                <span className="font-medium text-sm leading-tight">{option.label}</span>
               </div>
-              <p className="text-xs opacity-80 text-left leading-tight">
+              <p className="text-xs opacity-80 text-left leading-relaxed w-full">
                 {option.description}
               </p>
             </Button>

@@ -13,15 +13,15 @@ const FilterChip = ({ label, onRemove, variant = "secondary", removable = true }
   return (
     <Badge
       variant={variant}
-      className="flex items-center gap-1 px-3 py-1 text-sm font-medium transition-colors"
+      className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium transition-colors max-w-fit"
     >
-      <span>{label}</span>
+      <span className="truncate">{label}</span>
       {removable && (
         <Button
           variant="ghost"
           size="sm"
           onClick={onRemove}
-          className="h-auto p-0 ml-1 hover:bg-transparent"
+          className="h-auto p-0 ml-1 hover:bg-transparent flex-shrink-0"
         >
           <X className="h-3 w-3 hover:text-destructive transition-colors" />
         </Button>
