@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(npm install)",
+      "mcp__playwright__browser_navigate",
+      "WebSearch",
+      "Bash(tree:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run lint)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(node:*)",
+      "Bash(curl:*)",
+      "mcp__playwright__browser_close",
+      "Bash(vercel dev:*)",
+      "Bash(cat:*)",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_console_messages",
+      "Bash(npm run typecheck:*)",
+      "Bash(grep:*)",
+      "Read(///**)",
+      "Bash(for fact in y2k_bug_overblown killer_bees_invasion mad_cow_epidemic_usa dvd_kill_movie_theaters human_cloning_immediate email_kill_postal_service genetic_engineering_food_dangerous computer_chess_impossible static_brain carbs_always_bad antioxidant_supplements facebook_college_only human_genome_simple low_carb_dangerous stem_cells_embryonic_only wikipedia_unreliable planets_formation_slow)",
+      "Bash(do echo \"=== $fact ===\")",
+      "Bash(done)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
