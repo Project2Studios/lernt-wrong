@@ -202,12 +202,32 @@ function getFallbackFacts(): EnhancedFact[] {
 
 // Filter facts by graduation year (works with both database and static facts)
 export function getFactsForGraduationYear(facts: EnhancedFact[], year: number): EnhancedFact[] {
-  // If we're using static facts, use the original filtering logic
-  if (facts.length > 10) { // Assume static facts if we have many
-    const staticFacts = getStaticFacts(year);
-    return staticFacts.map(transformStaticFact);
-  }
+  // Calculate approximate school years (K-12: 13 years before graduation)
+  const schoolStartYear = year - 13;
+  const schoolEndYear = year;
 
-  // For database facts, return all for now (until full migration)
-  return facts;
+  return facts.filter(fact => {
+    // If the fact has a "taught until" year, it must overlap with school years
+    if (fact.taughtUntilYear) {
+      // Fact stopped being taught before they started school - exclude it
+      if (fact.taughtUntilYear < schoolStartYear) {
+        return false;
+      }
+    }
+
+    // If the fact was debunked, consider when it was debunked
+    if (fact.debunkedYear) {
+      // Include facts that were debunked during or after their school years
+      // This shows "what you learned that was already known to be wrong"
+      // But also include things debunked much later to show evolution of knowledge
+
+      // For very old debunking (before 1950), be more selective
+      if (fact.debunkedYear < 1950 && fact.debunkedYear < schoolStartYear - 20) {
+        return false;
+      }
+    }
+
+    // Include facts that were likely taught during their school years
+    return true;
+  });
 }
