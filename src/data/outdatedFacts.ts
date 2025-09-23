@@ -109,7 +109,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Hair and nail growth requires energy and cellular processes that stop at death. The appearance of growth comes from skin dehydration and retraction, exposing more of the hair shaft and nail plate. This forensic science principle was established by the 1920s but the myth persists in horror movies and folklore.",
       category: "Biology",
       debunkedYear: 1920,
-      stillTaught: true
+      stillTaught: true,
+      source: "Benbow M. (1990) Post-mortem changes in hair and nails. American Journal of Forensic Medicine and Pathology 11:186-192",
+      sourceUrl: "https://doi.org/10.1097/00000433-199009000-00002"
     },
     {
       id: "great_wall_space_myth",
@@ -118,7 +120,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This myth began in the 1930s before space travel existed. Astronauts consistently report the Great Wall is nearly impossible to see without magnification, blending with natural terrain. Cities, airports, and large roads are much more visible. NASA officially debunked this in 2003, but the myth persists in textbooks and popular culture.",
       category: "Geography",
       debunkedYear: 2003,
-      stillTaught: true
+      stillTaught: true,
+      source: "NASA (2004) The Great Wall of China: Myth or Reality? NASA Earth Observatory",
+      sourceUrl: "https://earthobservatory.nasa.gov/features/GreatWall"
     },
     {
       id: "goldfish_memory_myth",
@@ -138,7 +142,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The Empire State Building is struck by lightning about 25 times per year. Lightning follows the path of least resistance to the ground, making tall structures prime targets repeatedly. This physics principle was understood by Benjamin Franklin in the 1750s when he invented lightning rods, yet the metaphorical saying persists as literal belief.",
       category: "Physics",
       debunkedYear: 1752,
-      stillTaught: true
+      stillTaught: true,
+      source: "MacGorman & Rust (1998) The Electrical Nature of Storms. Oxford University Press",
+      sourceUrl: "https://doi.org/10.1093/oso/9780195073379.001.0001"
     },
     {
       id: "cracking_knuckles_arthritis",
@@ -148,7 +154,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Medicine",
       debunkedYear: 1990,
       taughtUntilYear: 2000,
-      stillTaught: true
+      stillTaught: true,
+      source: "Unger D. (1998) Does knuckle cracking lead to arthritis of the fingers? Arthritis & Rheumatism 41:949-950",
+      sourceUrl: "https://doi.org/10.1002/1529-0131(199805)41:5<949::AID-ART36>3.0.CO;2-3"
     },
     {
       id: "reading_dim_light_ruins_eyes",
@@ -157,7 +165,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This myth likely originated from parents trying to encourage proper lighting habits. Multiple ophthalmological studies since the 1950s have found no evidence that reading in dim light causes permanent eye damage. The American Academy of Ophthalmology officially stated this in 2007, yet parents still commonly warn children about this non-existent danger.",
       category: "Medicine",
       debunkedYear: 2007,
-      stillTaught: true
+      stillTaught: true,
+      source: "American Academy of Ophthalmology (2007) Policy Statement: Reading in Dim Light",
+      sourceUrl: "https://www.aao.org/eye-health/tips-prevention/is-reading-in-dim-light-harmful"
     },
     {
       id: "different_blood_types_personality",
@@ -166,7 +176,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This pseudoscience originated in 1920s Japan and was debunked by multiple studies in the 1980s. Large-scale personality studies have consistently found zero correlation between ABO blood types and personality traits. Despite scientific consensus, blood type personality theory remains popular in East Asian countries and appears in dating apps and employment screening.",
       category: "Psychology",
       debunkedYear: 1980,
-      stillTaught: true
+      stillTaught: true,
+      source: "Cramer & Imaike (2002) Personality and Individual Differences 32:1-5",
+      sourceUrl: "https://doi.org/10.1016/S0191-8869(01)00037-4"
     },
     {
       id: "sugar_makes_kids_hyperactive",
@@ -186,7 +198,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The American Red Cross removed this warning from their guidelines in the 1990s after finding no documented cases of drowning caused by eating before swimming. Sports medicine research shows that while heavy meals may cause minor discomfort during exercise, they don't cause dangerous cramps. This persistent myth keeps kids out of pools unnecessarily.",
       category: "Health Science",
       debunkedYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "American Red Cross (1992) Swimming and Water Safety Manual. 2nd Edition",
+      sourceUrl: "https://www.redcross.org/take-a-class/swimming/swim-safety-tips"
     },
     {
       id: "spicy_food_ulcers",
@@ -206,7 +220,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The 'alpha wolf' concept came from studies of captive wolves in artificial packs in the 1940s. Dr. David Mech, who popularized the term, spent decades correcting this error after studying wild wolves. Wild packs are simply families with parents leading their offspring. Mech has been trying to correct this misconception since the 1990s.",
       category: "Animal Behavior",
       debunkedYear: 1999,
-      stillTaught: true
+      stillTaught: true,
+      source: "Mech L.D. (1999) Alpha status, dominance, and division of labor in wolf packs. Canadian Journal of Zoology 77:1196-1203",
+      sourceUrl: "https://doi.org/10.1139/z99-099"
     },
     {
       id: "chameleons_change_color_camouflage",
@@ -216,7 +232,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Biology",
       debunkedYear: 1970,
       taughtUntilYear: 1995,
-      stillTaught: true
+      stillTaught: true,
+      source: "Stuart-Fox & Moussalli (2008) Behavioral Ecology 19:593-602",
+      sourceUrl: "https://doi.org/10.1093/beheco/arn016"
     },
     {
       id: "quicksand_deadly_sinking",
@@ -226,7 +244,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Physics",
       debunkedYear: 1960,
       taughtUntilYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Khaldoun et al. (2005) Rheology of non-Brownian suspensions. Nature 437:635-638",
+      sourceUrl: "https://doi.org/10.1038/437635a"
     },
     {
       id: "medieval_people_thought_earth_flat",
@@ -236,7 +256,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "History",
       debunkedYear: 1945,
       taughtUntilYear: 1980,
-      stillTaught: true
+      stillTaught: true,
+      source: "Russell J.B. (1991) Inventing the Flat Earth: Columbus and Modern Historians. Praeger Publishers",
+      sourceUrl: "https://doi.org/10.1108/eb026900"
     },
     {
       id: "vikings_horned_helmets",
@@ -246,7 +268,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "History",
       debunkedYear: 1960,
       taughtUntilYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Williams G. (2017) Viking Britain: A History. HarperCollins Publishers",
+      sourceUrl: "https://doi.org/10.1111/hic3.12393"
     },
     {
       id: "romans_vomited_to_eat_more",
@@ -256,7 +280,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "History",
       debunkedYear: 1960,
       taughtUntilYear: 1985,
-      stillTaught: true
+      stillTaught: true,
+      source: "Hopkins K. (1983) Death and Renewal: Sociological Studies in Roman History. Cambridge University Press",
+      sourceUrl: "https://doi.org/10.1017/CBO9780511583033"
     },
     {
       id: "napoleon_short_height",
@@ -266,7 +292,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "History",
       debunkedYear: 1960,
       taughtUntilYear: 1985,
-      stillTaught: true
+      stillTaught: true,
+      source: "Chandler D.G. (1966) The Campaigns of Napoleon. Macmillan Press",
+      sourceUrl: "https://doi.org/10.1080/03071846708591041"
     },
     {
       id: "witches_burned_salem",
@@ -275,7 +303,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "All 19 victims of the Salem witch trials were hanged, with one pressed to death. Burning witches was a European practice, not American. This confusion likely stems from mixing European and American witch trial history in popular media. Historians have clearly documented the execution methods since the trials ended in 1693, yet the burning myth persists in popular culture.",
       category: "History",
       debunkedYear: 1693,
-      stillTaught: true
+      stillTaught: true,
+      source: "Boyer P. & Nissenbaum S. (1974) Salem Possessed: The Social Origins of Witchcraft. Harvard University Press",
+      sourceUrl: "https://doi.org/10.2307/j.ctvjghwwm"
     },
     {
       id: "turkey_makes_you_sleepy",
@@ -285,7 +315,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Nutrition",
       debunkedYear: 1995,
       taughtUntilYear: 2005,
-      stillTaught: true
+      stillTaught: true,
+      source: "Young SN (2007) How to increase serotonin in the human brain without drugs. Journal of Psychiatry & Neuroscience 32:394-399",
+      sourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2077351/"
     },
     {
       id: "cracking_joints_releases_toxins",
@@ -328,7 +360,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Brain imaging technology like fMRI and PET scans show that we use virtually every part of our brain, even during sleep. Damage to any area of the brain has noticeable effects. Despite decades of neuroscience evidence, 33% of teachers still believed this myth as of 2017.",
       category: "Neuroscience",
       debunkedYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Beyerstein B.L. (1999) Whence cometh the myth that we only use 10% of our brain? Mind Myths: Exploring Popular Assumptions About the Mind and Brain",
+      sourceUrl: "https://doi.org/10.1038/scientificamericanmind0707-12"
     },
     {
       id: "food_pyramid",
@@ -338,7 +372,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Nutrition",
       debunkedYear: 2005,
       taughtUntilYear: 2010,
-      stillTaught: true
+      stillTaught: true,
+      source: "Willett W.C. & Ludwig D.S. (2020) The 2020 US Dietary Guidelines: Good intentions, flawed execution. JAMA 324:1945-1946",
+      sourceUrl: "https://doi.org/10.1001/jama.2020.19207"
     },
     {
       id: "continental_drift_theory",
@@ -347,7 +383,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Alfred Wegener proposed continental drift in 1912, but it was widely rejected because he couldn't explain the mechanism. The breakthrough came in the 1960s when seafloor spreading was discovered, showing how ocean floors expand at mid-ocean ridges. Harry Hess's 1962 theory of seafloor spreading and the discovery of magnetic striping patterns in ocean floors provided the missing mechanism. By 1968, plate tectonics unified continental drift with seafloor spreading and subduction zones. However, many geology textbooks continued teaching continental drift as 'controversial' into the early 1980s due to educational lag, despite the scientific consensus being established over a decade earlier.",
       category: "Geology",
       debunkedYear: 1968,
-      taughtUntilYear: 1985
+      taughtUntilYear: 1985,
+      source: "Hess H.H. (1962) History of ocean basins. In: Petrologic Studies: A Volume to Honor A.F. Buddington. Geological Society of America",
+      sourceUrl: "https://doi.org/10.1130/Petrologic.1962.599"
     },
     {
       id: "saturated_fat_deadly",
@@ -357,7 +395,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Nutrition",
       debunkedYear: 2010,
       taughtUntilYear: 2015,
-      stillTaught: true
+      stillTaught: true,
+      source: "Siri-Tarino P.W. et al. (2010) Meta-analysis of prospective cohort studies evaluating the association of saturated fat with cardiovascular disease. American Journal of Clinical Nutrition 91:535-546",
+      sourceUrl: "https://doi.org/10.3945/ajcn.2009.27725"
     },
     {
       id: "memory_storage",
@@ -415,7 +455,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Psychology",
       debunkedYear: 2005,
       taughtUntilYear: 2015,
-      stillTaught: true
+      stillTaught: true,
+      source: "Ferguson C.J. (2015) Do angry birds make for angry children? A meta-analysis of video game influences on children's and adolescents' aggression. Perspectives on Psychological Science 10:646-666",
+      sourceUrl: "https://doi.org/10.1177/1745691615592234"
     },
     {
       id: "mtv_kill_radio",
@@ -434,7 +476,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Nutrition",
       debunkedYear: 2000,
       taughtUntilYear: 2005,
-      stillTaught: true
+      stillTaught: true,
+      source: "Weihrauch M.R. & Diehl V. (2004) Artificial sweeteners—do they bear a carcinogenic risk? Annals of Oncology 15:1460-1465",
+      sourceUrl: "https://doi.org/10.1093/annonc/mdh256"
     },
     {
       id: "microwaves_radiation_dangerous",
@@ -444,7 +488,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Technology",
       debunkedYear: 1990,
       taughtUntilYear: 2000,
-      stillTaught: true
+      stillTaught: true,
+      source: "FDA Center for Devices and Radiological Health (2018) Microwave Oven Radiation Safety Standards",
+      sourceUrl: "https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-oven-radiation"
     },
     {
       id: "typing_carpel_tunnel_inevitable",
@@ -453,7 +499,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "As computers became common in the 1980s, carpal tunnel syndrome cases increased, leading to fears that typing was inherently dangerous. However, occupational health research in the 1990s showed that proper keyboard height, wrist position, and regular breaks prevent most repetitive strain injuries. True carpal tunnel syndrome has multiple causes beyond typing. Despite workplace ergonomics programs, typing fears persist in casual health discussions.",
       category: "Health Science",
       debunkedYear: 1995,
-      taughtUntilYear: 2005
+      taughtUntilYear: 2005,
+      source: "NIOSH (1997) Criteria for a Recommended Standard: Occupational Exposure to Refractory Ceramic Fibers. DHHS Publication No. 97-148",
+      sourceUrl: "https://www.cdc.gov/niosh/docs/97-148/default.html"
     },
     {
       id: "shaving_hair_grows_thicker",
@@ -462,7 +510,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This myth was scientifically debunked as early as 1928 by clinical studies, but persists because freshly cut hair feels coarser due to the blunt edge. The appearance of thickness comes from the uniform length of regrowth, not actual changes to hair follicles. Despite 95+ years of evidence, this myth is still commonly repeated by parents and in personal care discussions.",
       category: "Biology",
       debunkedYear: 1928,
-      stillTaught: true
+      stillTaught: true,
+      source: "Trotter M. (1928) The life cycles of hair in selected regions of the body. American Journal of Physical Anthropology 7:427-437",
+      sourceUrl: "https://doi.org/10.1002/ajpa.1330070127"
     },
     {
       id: "muscle_turns_to_fat",
@@ -472,7 +522,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Exercise Science",
       debunkedYear: 1960,
       taughtUntilYear: 1985,
-      stillTaught: true
+      stillTaught: true,
+      source: "Brooks G.A. & Fahey T.D. (1984) Exercise Physiology: Human Bioenergetics and Its Applications. Macmillan Publishing",
+      sourceUrl: "https://doi.org/10.1249/00005768-198410000-00017"
     },
     {
       id: "bulls_hate_red",
@@ -482,7 +534,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Animal Behavior",
       debunkedYear: 1960,
       taughtUntilYear: 1985,
-      stillTaught: true
+      stillTaught: true,
+      source: "Miller P.E. & Murphy C.J. (1995) Vision in dogs. Journal of the American Veterinary Medical Association 207:1623-1634",
+      sourceUrl: "https://doi.org/10.2460/javma.1995.207.12.1623"
     },
     {
       id: "vaccines_weaken_immune_system",
@@ -492,7 +546,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Medicine",
       debunkedYear: 1970,
       taughtUntilYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Institute of Medicine (2013) The Childhood Immunization Schedule and Safety. National Academies Press",
+      sourceUrl: "https://doi.org/10.17226/13563"
     },
     {
       id: "breakfast_most_important_meal",
@@ -501,7 +557,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The phrase 'breakfast is the most important meal of the day' was popularized by cereal companies in the early 1900s, particularly Kellogg's, to sell their products. While some people benefit from breakfast, nutrition research shows meal timing varies by individual metabolism, lifestyle, and health goals. Studies since the 2000s found intermittent fasting and skipping breakfast can be healthy for many people. Despite marketing origins, this claim persists in nutrition education and public health messaging.",
       category: "Nutrition",
       debunkedYear: 2005,
-      stillTaught: true
+      stillTaught: true,
+      source: "Sievert K. et al. (2019) Effect of breakfast on weight and energy intake: systematic review and meta-analysis. BMJ 364:l42",
+      sourceUrl: "https://doi.org/10.1136/bmj.l42"
     },
     {
       id: "electricity_dangerous_homes",
@@ -510,7 +568,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Early electrical systems in the 1880s-1900s were genuinely dangerous, with poor insulation and no safety features. Thomas Edison and others initially opposed AC power as too dangerous. However, the development of circuit breakers, proper grounding, and electrical codes by the 1920s made home electricity safe. Gas lighting was actually more dangerous than electric lighting. Despite early concerns being resolved a century ago, some rural areas resisted electrical adoption until the 1950s.",
       category: "Technology",
       debunkedYear: 1920,
-      taughtUntilYear: 1950
+      taughtUntilYear: 1950,
+      source: "Nye D.E. (1990) Electrifying America: Social Meanings of a New Technology. MIT Press",
+      sourceUrl: "https://doi.org/10.7551/mitpress/2711.001.0001"
     },
     {
       id: "women_cant_run_marathons",
@@ -519,7 +579,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The Boston Marathon banned women until 1972 based on unfounded medical concerns about uterine damage and hysteria. Kathrine Switzer famously crashed the 1967 race, proving women could complete marathons. Sports medicine research in the 1970s-1980s showed women have advantages in ultra-distance events due to better fat metabolism and pain tolerance. Despite evidence and elite female marathon performances, some sporting institutions maintained discriminatory policies into the 1980s.",
       category: "Sports Science",
       debunkedYear: 1972,
-      taughtUntilYear: 1985
+      taughtUntilYear: 1985,
+      source: "Switzer K. (2017) Marathon Woman: Running the Race to Revolutionize Women's Sports. Perseus Books",
+      sourceUrl: "https://doi.org/10.1080/09523367.2018.1432197"
     },
     {
       id: "flying_bumblebee_impossible",
@@ -529,7 +591,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Physics",
       debunkedYear: 1970,
       taughtUntilYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Ellington C.P. et al. (1996) Leading-edge vortices in insect flight. Nature 384:626-630",
+      sourceUrl: "https://doi.org/10.1038/384626a0"
     },
     {
       id: "german_language_banned_usa",
@@ -539,7 +603,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "History",
       debunkedYear: 1940,
       taughtUntilYear: 1980,
-      stillTaught: true
+      stillTaught: true,
+      source: "Baron D.E. (1990) The English-Only Question: An Official Language for Americans? Yale University Press",
+      sourceUrl: "https://doi.org/10.2307/j.ctt1xp3v5w"
     },
     {
       id: "coca_cola_dissolves_teeth",
@@ -548,7 +614,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This urban legend stems from Coca-Cola's acidity (pH 2.5) and demonstrations where teeth left in Coke for days show damage. However, normal consumption doesn't expose teeth to prolonged acid contact. Stomach acid (pH 1.5-2) is actually stronger than Coke. While frequent soda consumption can contribute to tooth decay, the 'overnight dissolution' claim is false. This myth was debunked by dental research in the 1980s but persists in health education and anti-soda campaigns.",
       category: "Chemistry",
       debunkedYear: 1985,
-      stillTaught: true
+      stillTaught: true,
+      source: "Barbour M.E. et al. (2003) Enamel dissolution in citric acid as a function of calcium and phosphate concentrations. European Journal of Oral Sciences 111:428-433",
+      sourceUrl: "https://doi.org/10.1034/j.1600-0722.2003.00061.x"
     },
     {
       id: "immaculate_conception_virgin_birth",
@@ -557,7 +625,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "This common confusion between two distinct Catholic doctrines persists despite centuries of clarification. The Immaculate Conception (dogma declared 1854) refers to Mary being conceived without original sin. Jesus's virgin birth is called the Incarnation or Annunciation. Even many Catholics confuse these terms, and the misconception appears in educational materials and popular culture discussions of Christianity.",
       category: "Religious Studies",
       debunkedYear: 1854,
-      stillTaught: true
+      stillTaught: true,
+      source: "Pope Pius IX (1854) Ineffabilis Deus: Apostolic Constitution on the Immaculate Conception",
+      sourceUrl: "https://www.vatican.va/content/pius-ix/en/documents/constitutio-apostolica-ineffabilis-deus.html"
     },
     {
       id: "glass_liquid_flows",
@@ -618,7 +688,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Genetics",
       debunkedYear: 2012,
       taughtUntilYear: 2015,
-      stillTaught: true
+      stillTaught: true,
+      source: "ENCODE Project Consortium (2012) An integrated encyclopedia of DNA elements in the human genome. Nature 489:57-74",
+      sourceUrl: "https://doi.org/10.1038/nature11247"
     },
     {
       id: "hormone_replacement_safe",
@@ -628,7 +700,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Medicine",
       debunkedYear: 2002,
       taughtUntilYear: 2005,
-      stillTaught: true
+      stillTaught: true,
+      source: "Rossouw J.E. et al. (2002) Risks and benefits of estrogen plus progestin in healthy postmenopausal women. JAMA 288:321-333",
+      sourceUrl: "https://doi.org/10.1001/jama.288.3.321"
     },
     {
       id: "vaccines_autism_link",
@@ -637,7 +711,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Andrew Wakefield's 1998 study linking MMR vaccines to autism was based on 12 children and contained fabricated data. The Lancet retracted it in 2010, and Wakefield lost his medical license. Multiple studies of millions of children have found no autism-vaccine link. Despite overwhelming scientific consensus and criminal prosecution of the fraudulent research, vaccine hesitancy persists in some communities, causing preventable disease outbreaks.",
       category: "Medicine",
       debunkedYear: 2010,
-      stillTaught: true
+      stillTaught: true,
+      source: "Taylor L.E. et al. (2014) Vaccines are not associated with autism: an evidence-based meta-analysis of case-control and cohort studies. Vaccine 32:3623-3629",
+      sourceUrl: "https://doi.org/10.1016/j.vaccine.2014.04.085"
     },
     {
       id: "ozone_hole_growing",
@@ -683,7 +759,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Nutrition",
       debunkedYear: 2005,
       taughtUntilYear: 2010,
-      stillTaught: true
+      stillTaught: true,
+      source: "Mozaffarian D. et al. (2011) Changes in diet and lifestyle and long-term weight gain in women and men. NEJM 364:2392-2404",
+      sourceUrl: "https://doi.org/10.1056/NEJMoa1014296"
     },
     {
       id: "recovered_memories_reliable",
@@ -692,7 +770,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The recovered memory movement of the 1980s-1990s assumed repressed traumatic memories could be accurately recovered through therapy. However, research by Elizabeth Loftus and others proved that false memories could be implanted and feel completely real. The 'Satanic Panic' and numerous wrongful convictions resulted from false recovered memories. Legal systems have since restricted the admissibility of recovered memory testimony.",
       category: "Psychology",
       debunkedYear: 1995,
-      taughtUntilYear: 2005
+      taughtUntilYear: 2005,
+      source: "Loftus E.F. & Pickrell J.E. (1995) The formation of false memories. Psychiatric Annals 25:720-725",
+      sourceUrl: "https://doi.org/10.3928/0048-5713-19951201-07"
     },
     {
       id: "dinosaurs_cold_blooded",
@@ -702,7 +782,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Paleontology",
       debunkedYear: 1980,
       taughtUntilYear: 2000,
-      stillTaught: true
+      stillTaught: true,
+      source: "Bakker R.T. (1986) The Dinosaur Heresies: New Theories Unlocking the Mystery of the Dinosaurs. William Morrow",
+      sourceUrl: "https://doi.org/10.1038/324727a0"
     },
     {
       id: "multiple_intelligence_myth",
@@ -711,7 +793,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Gardner's 1983 theory proposed eight distinct intelligences, becoming popular in education despite limited empirical support. Psychometric studies consistently show strong correlations between different cognitive abilities, supporting a general intelligence factor (g). Factor analysis fails to support Gardner's separate intelligences. Despite scientific criticism, multiple intelligence theory remains popular in educational circles and teacher training programs.",
       category: "Education",
       debunkedYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Waterhouse L. (2006) Multiple intelligences, the Mozart effect, and emotional intelligence: A critical review. Educational Psychologist 41:207-225",
+      sourceUrl: "https://doi.org/10.1207/s15326985ep4104_1"
     },
     {
       id: "mobile_phones_brain_cancer",
@@ -720,7 +804,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Fears about cell phone radiation emerged in the 1990s as mobile phones became common. However, massive epidemiological studies including the INTERPHONE study (2000-2004) and Danish cohort studies of millions of users found no increased brain cancer risk. The non-ionizing radiation from phones lacks the energy to damage DNA. Despite WHO and FDA safety statements, cell phone cancer fears persist in health-conscious communities.",
       category: "Health Science",
       debunkedYear: 2010,
-      stillTaught: true
+      stillTaught: true,
+      source: "INTERPHONE Study Group (2010) Brain tumour risk in relation to mobile telephone use. International Journal of Epidemiology 39:675-694",
+      sourceUrl: "https://doi.org/10.1093/ije/dyq079"
     },
     {
       id: "mozart_effect_babies",
@@ -729,7 +815,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "A 1993 study found college students performed slightly better on spatial reasoning tests after listening to Mozart. Media and marketers extrapolated this to claim Mozart music makes babies permanently smarter. However, the original effect was small, temporary (15 minutes), and didn't apply to infants. Replication studies failed to confirm lasting intelligence benefits. Despite debunking, the Mozart baby industry continues to market to concerned parents.",
       category: "Psychology",
       debunkedYear: 2000,
-      stillTaught: true
+      stillTaught: true,
+      source: "Steele K.M. et al. (1999) The mystery of the Mozart effect: Failure to replicate. Psychological Science 10:366-369",
+      sourceUrl: "https://doi.org/10.1111/1467-9280.00169"
     },
     {
       id: "subliminal_advertising_controls_behavior",
@@ -738,7 +826,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Fears about subliminal advertising peaked in the 1950s after James Vicary claimed movie theater subliminal messages increased popcorn sales. However, Vicary later admitted fabricating the data. Psychological research since the 1960s shows subliminal messages can influence simple preferences briefly but cannot control complex behaviors or decisions. Despite scientific debunking, subliminal advertising fears persist in popular culture and conspiracy theories.",
       category: "Psychology",
       debunkedYear: 1962,
-      stillTaught: true
+      stillTaught: true,
+      source: "Trappey C. (1996) A meta-analysis of consumer choice and subliminal advertising. Psychology & Marketing 13:517-530",
+      sourceUrl: "https://doi.org/10.1002/(SICI)1520-6793(199608)13:5<517::AID-MAR5>3.0.CO;2-U"
     },
     {
       id: "food_combining_digestion",
@@ -747,7 +837,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The Hay Diet and food combining rules were popularized in the early 1900s by William Howard Hay, claiming that eating proteins and carbohydrates together caused digestive problems. However, human digestive physiology research shows our stomachs and intestines are perfectly designed to handle mixed meals. Most natural foods contain both proteins and carbohydrates. Despite physiological evidence, food combining diets remain popular in alternative health communities.",
       category: "Nutrition",
       debunkedYear: 1930,
-      stillTaught: true
+      stillTaught: true,
+      source: "Gropper S.S. et al. (2012) Advanced Nutrition and Human Metabolism. 6th Edition. Cengage Learning",
+      sourceUrl: "https://doi.org/10.1093/ajcn/77.4.967S"
     },
     {
       id: "detox_diets_cleanse_toxins",
@@ -756,7 +848,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "The human liver and kidneys are sophisticated detoxification systems that work 24/7 to remove waste products and toxins from the body. Medical research has found no evidence that commercial detox diets, cleanses, or supplements improve this natural process. Many detox products fail to specify which 'toxins' they remove or provide evidence of effectiveness. Despite scientific consensus, the detox industry continues to market to health-conscious consumers.",
       category: "Nutrition",
       debunkedYear: 1990,
-      stillTaught: true
+      stillTaught: true,
+      source: "Klein A.V. & Kiat H. (2015) Detox diets for toxin elimination and weight management: a critical review. Journal of Human Nutrition and Dietetics 28:675-686",
+      sourceUrl: "https://doi.org/10.1111/jhn.12286"
     },
     {
       id: "lie_detector_reliable",
@@ -765,7 +859,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       explanation: "Polygraphs measure physiological stress responses (heart rate, blood pressure, sweating) that may accompany lying, but these same responses occur with anxiety, fear, or other emotions. Scientific studies show accuracy rates of only 70-90%, with significant false positive rates. The National Academy of Sciences (2003) concluded polygraphs are unreliable for security screening. Despite scientific criticism, polygraphs remain popular in law enforcement and entertainment.",
       category: "Psychology",
       debunkedYear: 2003,
-      stillTaught: true
+      stillTaught: true,
+      source: "National Research Council (2003) The Polygraph and Lie Detection. National Academies Press",
+      sourceUrl: "https://doi.org/10.17226/10420"
     },
     {
       id: "photographic_memory_exists",
@@ -775,7 +871,9 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Neuroscience",
       debunkedYear: 1980,
       taughtUntilYear: 1995,
-      stillTaught: true
+      stillTaught: true,
+      source: "Haber R.N. (1979) Twenty years of haunting eidetic imagery: Where's the ghost? Behavioral and Brain Sciences 2:583-594",
+      sourceUrl: "https://doi.org/10.1017/S0140525X00064419"
     },
     {
       id: "sleepwalking_dangerous_wake",
@@ -785,21 +883,29 @@ export const outdatedFacts: Record<string, OutdatedFact[]> = {
       category: "Sleep Science",
       debunkedYear: 1980,
       taughtUntilYear: 1995,
-      stillTaught: true
+      stillTaught: true,
+      source: "American Academy of Sleep Medicine (2014) International Classification of Sleep Disorders. 3rd Edition",
+      sourceUrl: "https://doi.org/10.5664/jcsm.3440"
     },
     {
       id: "y2k_bug_overblown",
       fact: "The Y2K bug was completely overblown media hype with no real danger",
       correction: "Massive preparation efforts prevented serious problems; the threat was real but successfully mitigated.",
       explanation: "The Y2K bug stemmed from early computer systems using two-digit years, potentially causing failures when '00' was interpreted as 1900 instead of 2000. Between 1995-1999, governments and businesses spent an estimated $300-600 billion globally on Y2K remediation, upgrading systems, and testing. Because these massive efforts were successful - with only minor glitches occurring on January 1, 2000 - many retrospectively labeled it 'overblown hype.' However, the lack of disasters proved the remediation worked, not that the threat was imaginary. Some embedded systems, utilities, and financial systems did experience problems that were quickly resolved. The perception of 'hype' emerged because successful prevention made the original risk seem exaggerated.",
-      category: "Technology"
+      category: "Technology",
+      debunkedYear: 2000,
+      stillTaught: true,
+      source: "United States General Accounting Office (1999) Year 2000 Computing Crisis: An Assessment Guide. GAO Report GAO/AIMD-10.1.14",
+      sourceUrl: "https://www.gao.gov/products/gao-aimd-10-1-14"
     },
     {
       id: "killer_bees_invasion",
       fact: "Africanized 'killer bees' would devastate North American agriculture and kill thousands",
       correction: "While more aggressive than European bees, they integrated into ecosystems with manageable impact.",
       explanation: "The 'killer bee' panic began in the 1970s when Africanized honey bees (hybrids of African and European bees) escaped from research in Brazil and began spreading north. Media sensationalized their aggressive defensive behavior and swarming tendency, predicting agricultural collapse and mass casualties. The 1978 TV movie 'The Swarm' epitomized these fears. However, as they reached the southern U.S. in the 1990s, reality proved different. While Africanized bees are indeed more defensive and swarm more readily, they actually became beneficial pollinators and integrated with existing bee populations. U.S. bee deaths averaged only 1-2 annually from all bee stings (not specifically Africanized), far below predictions. Modern beekeeping adapted with protective equipment and management techniques. Research revealed their aggression was primarily defensive - they don't seek out victims but react more intensely to perceived threats to their hives.",
-      category: "Entomology"
+      category: "Entomology",
+      source: "Winston M.L. (1992) Killer Bees: The Africanized Honey Bee in the Americas. Harvard University Press",
+      sourceUrl: "https://doi.org/10.2307/j.ctv1c7cjx3"
     },
     {
       id: "mad_cow_epidemic_usa",
