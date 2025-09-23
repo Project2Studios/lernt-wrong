@@ -112,8 +112,8 @@ async function migrateFactsToDatabase(facts) {
     const insertQuery = `
       INSERT INTO facts (
         id, fact_text, correction, explanation, category,
-        debunked_year, taught_until_year, still_taught
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        debunked_year, taught_until_year, still_taught, source, source_url
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
     `;
 
     console.log('💾 Inserting facts into database...');
@@ -130,7 +130,9 @@ async function migrateFactsToDatabase(facts) {
           fact.category,
           fact.debunkedYear || null,
           fact.taughtUntilYear || null,
-          fact.stillTaught || false
+          fact.stillTaught || false,
+          fact.source || null,
+          fact.sourceUrl || null
         ];
 
         await client.query(insertQuery, values);
