@@ -236,12 +236,12 @@ const Index = () => {
             <img
               src="/logo.png"
               alt="Taught Wrong Logo"
-              className="h-20 w-auto"
+              className="h-32 md:h-40 w-auto"
             />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent-foreground to-primary bg-clip-text text-transparent leading-tight">
-            What Did You Learn <br />That Isn't True?
+            Science is always evolving.<br />Let's catch up.
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
