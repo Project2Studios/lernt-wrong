@@ -5,8 +5,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { GraduationCap, BookOpen, Calendar, ArrowRight } from "lucide-react";
 import { fetchFactsWithFallback, getFactsForGraduationYear, applyFilters, type EnhancedFact, type FilterOptions } from "@/lib/api";
 import FactCard from "@/components/FactCard";
+import AdCard from "@/components/AdCard";
 import FilterBar, { type FilterState } from "@/components/FilterBar";
 import Footer from "@/components/Footer";
+import { AdService } from "@/lib/adService";
+import type { NativeAd } from "@/types/ad";
 import { toast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -18,6 +21,7 @@ const Index = () => {
   const [isLoadingFacts, setIsLoadingFacts] = useState(true);
   const [usingFallback, setUsingFallback] = useState(false);
   const [localVotes, setLocalVotes] = useState<Record<string, { type: 'up' | 'down'; upvotes: number; downvotes: number }>>({});
+  const [factsWithAds, setFactsWithAds] = useState<(EnhancedFact | NativeAd)[]>([]);
 
   // Filter state
   const [activeFilters, setActiveFilters] = useState<FilterState>({
@@ -30,10 +34,21 @@ const Index = () => {
     sortBy: "chronological",
   });
 
-  // Apply filters to graduation-filtered facts
+  // Apply filters to graduation-filtered facts, then add ads
   const finalFilteredFacts = useMemo(() => {
-    return applyFilters(filteredFacts, activeFilters);
-  }, [filteredFacts, activeFilters]);
+    const filtered = applyFilters(filteredFacts, activeFilters);
+
+    // Get relevant ads and insert them into the stream
+    if (filtered.length > 0) {
+      const relevantAds = AdService.getRelevantAds(
+        filtered,
+        graduationYear ? parseInt(graduationYear) : undefined
+      );
+      return AdService.insertAdsIntoStream(filtered, relevantAds);
+    }
+
+    return filtered;
+  }, [filteredFacts, activeFilters, graduationYear]);
 
   // Load facts from API on component mount
   useEffect(() => {
@@ -140,6 +155,15 @@ const Index = () => {
     ));
   };
 
+  // Handle ad interactions
+  const handleAdClick = (adId: string) => {
+    AdService.trackClick(adId, graduationYear ? parseInt(graduationYear) : undefined);
+  };
+
+  const handleAdImpression = (adId: string) => {
+    AdService.trackImpression(adId, graduationYear ? parseInt(graduationYear) : undefined);
+  };
+
   if (showResults) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/30">
@@ -184,15 +208,29 @@ const Index = () => {
             />
 
             <div className="grid gap-6 md:gap-8 mt-8">
-              {finalFilteredFacts.map((fact, index) => (
-                <FactCard
-                  key={fact.id}
-                  fact={fact}
-                  index={index}
-                  onVoteUpdate={handleVoteUpdate}
-                  fallbackMode={usingFallback}
-                />
-              ))}
+              {finalFilteredFacts.map((item, index) => {
+                if (AdService.isAd(item)) {
+                  return (
+                    <AdCard
+                      key={`ad-${item.id}`}
+                      ad={item}
+                      index={index}
+                      onAdClick={handleAdClick}
+                      onAdImpression={handleAdImpression}
+                    />
+                  );
+                } else {
+                  return (
+                    <FactCard
+                      key={item.id}
+                      fact={item}
+                      index={index}
+                      onVoteUpdate={handleVoteUpdate}
+                      fallbackMode={usingFallback}
+                    />
+                  );
+                }
+              })}
             </div>
 
             {/* Empty states */}
