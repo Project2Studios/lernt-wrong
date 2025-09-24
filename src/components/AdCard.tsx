@@ -31,7 +31,7 @@ const AdCard = ({ ad, index, onAdClick, onAdImpression }: AdCardProps) => {
 
   return (
     <Card
-      className="overflow-hidden hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50"
+      className="overflow-hidden hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
       style={{ animationDelay: `${index * 100}ms` }}
       onMouseEnter={handleCardVisible} // Simple impression tracking
     >
@@ -40,7 +40,7 @@ const AdCard = ({ ad, index, onAdClick, onAdImpression }: AdCardProps) => {
           <div className="flex-1 space-y-4">
             {/* Sponsored badge and category */}
             <div className="flex items-center gap-2 flex-wrap">
-              <Badge variant="secondary" className="text-xs font-medium bg-orange-100 text-orange-800 border-orange-300">
+              <Badge variant="secondary" className="text-xs font-medium">
                 Sponsored
               </Badge>
               <Badge variant="outline" className="text-xs">
@@ -69,7 +69,7 @@ const AdCard = ({ ad, index, onAdClick, onAdImpression }: AdCardProps) => {
             <div className="flex items-center justify-between pt-3 border-t border-border/50">
               <Button
                 onClick={handleAdClick}
-                className="bg-orange-600 hover:bg-orange-700 text-white flex items-center gap-2"
+                className="flex items-center gap-2"
                 size="sm"
               >
                 {ad.callToAction}
