@@ -232,9 +232,12 @@ const Index = () => {
         <div className="w-full max-w-2xl mx-auto text-center space-y-8">
         {/* Header */}
         <div className="space-y-4">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <GraduationCap className="h-12 w-12 text-primary" />
-            <BookOpen className="h-10 w-10 text-accent-foreground" />
+          <div className="flex items-center justify-center mb-6">
+            <img
+              src="/logo.png"
+              alt="Taught Wrong Logo"
+              className="h-20 w-auto"
+            />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent-foreground to-primary bg-clip-text text-transparent leading-tight">
