@@ -241,7 +241,8 @@ const Index = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent-foreground to-primary bg-clip-text text-transparent leading-tight">
-            Science is always evolving.<br />Let's catch up.
+            Science is always evolving.
+            <span className="block mt-4">Let's catch up.</span>
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
