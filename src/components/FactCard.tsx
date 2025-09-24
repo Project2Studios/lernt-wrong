@@ -166,16 +166,16 @@ const FactCard = ({ fact, index, onVoteUpdate, fallbackMode = false }: FactCardP
                   Debunked in {fact.debunkedYear}
                 </Badge>
               )}
-              {fact.taughtUntilYear && (
-                <Badge variant="outline" className="text-xs border-red-500 text-red-700 bg-red-50">
-                  Taught until {fact.taughtUntilYear}
-                </Badge>
-              )}
-              {fact.stillTaught && (
+              {/* Teaching status: prioritize "still taught" over "taught until" */}
+              {fact.stillTaught ? (
                 <Badge variant="outline" className="text-xs border-red-600 text-red-800 bg-red-100 font-semibold">
                   Still taught today!
                 </Badge>
-              )}
+              ) : fact.taughtUntilYear ? (
+                <Badge variant="outline" className="text-xs border-red-500 text-red-700 bg-red-50">
+                  Taught until {fact.taughtUntilYear}
+                </Badge>
+              ) : null}
             </div>
 
             {/* What you learned */}
